@@ -67,7 +67,7 @@ ul {
     justify-content: space-between;
     align-items: center;
     height: auto;
-    padding: 10px 0;
+    padding: 10px;
     border-radius: 36px;
 }
 
@@ -637,11 +637,33 @@ ul {
 
     .hero-buttons {
         flex-direction: column;
+        align-items: center; /* Centrar botones */
+        gap: 15px;
     }
 
     .btn {
-        width: 100%;
+        width: auto; /* No ocupar todo el ancho */
+        min-width: 200px; /* Ancho mínimo razonable */
         text-align: center;
+    }
+
+    .feature-badges {
+        flex-direction: column; /* Apilar verticalmente */
+        align-items: center;
+    }
+
+    .badge {
+        width: 100%; /* Ocupar ancho disponible del contenedor */
+        max-width: 300px; /* Pero no demasiado anchos */
+        padding: 25px; /* Un poco más de aire */
+    }
+
+    .badge i {
+        font-size: 2.5rem; /* Icono más grande */
+    }
+
+    .badge span {
+        font-size: 1rem; /* Texto un poco más grande */
     }
 
     .footer-grid {
