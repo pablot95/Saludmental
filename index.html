@@ -13,15 +13,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Estilos -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="social-cards.css">
 </head>
 <body>
 
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container nav-container">
-            <div class="logo-container">
-                <img src="images/logo.jpeg" alt="Logo A.I.Sa.M" class="logo">
-            </div>
+            <!-- Logo retirado del navbar -->
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#clinica">Atención Clínica</a></li>
@@ -35,14 +34,23 @@
     </nav>
 
     <!-- Hero Section -->
-    <header id="inicio" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content fade-in">
-            <h2>Mejorar tu bienestar es posible</h2>
-            <p>Brindamos atención integral en salud mental para niños, adolescentes y adultos en General Alvear, Mendoza.</p>
-            <div class="hero-buttons">
-                <a href="#clinica" class="btn btn-primary">Ver Servicios</a>
-                <a href="#talleres" class="btn btn-outline" style="color:white; border-color:white;">Ver Talleres</a>
+    <header id="inicio" class="hero-full-width">
+        <div class="hero-overlay-gradient"></div>
+        
+        <div class="hero-content-wrapper">
+            <!-- Panel Izquierdo Flotante (Logo) -->
+            <div class="hero-brand-panel fade-in">
+                <img src="images/logo.jpeg" alt="Logo A.I.Sa.M" class="hero-logo-panel">
+            </div>
+
+            <!-- Contenido Texto y CTA (Derecha/Centro) -->
+            <div class="hero-text-content fade-in">
+                <h2>Mejorar tu bienestar es posible</h2>
+                <p>Brindamos atención integral en salud mental para niños, adolescentes y adultos en General Alvear, Mendoza.</p>
+                <div class="hero-buttons">
+                    <a href="#clinica" class="btn btn-primary">Ver Servicios</a>
+                    <a href="#talleres" class="btn btn-outline-white">Ver Talleres</a>
+                </div>
             </div>
         </div>
     </header>
@@ -62,10 +70,6 @@
                     <div class="badge">
                         <i class="fas fa-users"></i>
                         <span>Enfoque Grupal</span>
-                    </div>
-                    <div class="badge">
-                        <i class="fas fa-notes-medical"></i>
-                        <span>Cobertura O.S.E.P.</span>
                     </div>
                 </div>
             </div>
@@ -99,7 +103,7 @@
 
             <div class="coverage-info fade-in">
                 <p><i class="fas fa-wallet"></i> Atención Particular</p>
-                <p><i class="fas fa-file-medical"></i> Convenios con Obras Sociales</p>
+                <!-- <p><i class="fas fa-file-medical"></i> Convenios con Obras Sociales</p> -->
                 <a href="https://wa.me/5492625557253?text=Hola,%20quisiera%20solicitar%20un%20turno%20para%20atención%20clínica" class="btn btn-primary" style="margin-left: 20px;">Solicitar Turno</a>
             </div>
         </div>
@@ -109,7 +113,7 @@
     <section id="talleres" class="services-section">
         <div class="container">
             <h2 class="section-title text-center">Nuestros Talleres y Grupos</h2>
-            <p class="section-subtitle text-center">Espacios terapéuticos gratuitos para afiliados de O.S.E.P.</p>
+            <p class="section-subtitle text-center">Espacios terapéuticos grupales.</p>
             
             <div class="cards-grid">
                 
@@ -171,7 +175,8 @@
         </div>
     </section>
 
-    <!-- Banner OSEP -->
+    <!-- Banner OSEP REMOVED -->
+    <!-- 
     <section class="osep-banner">
         <div class="container">
             <div class="osep-content">
@@ -183,6 +188,7 @@
             </div>
         </div>
     </section>
+    -->
 
     <!-- Contacto -->
     <footer id="contacto" class="footer">
@@ -192,28 +198,43 @@
                 <p>Atención Integral en Salud Mental</p>
                 <div class="contact-item">
                     <i class="fas fa-map-marker-alt"></i>
-                    <p>General Alvear, Mendoza</p>
+                    <p><a href="https://maps.app.goo.gl/TuLinkDeGoogleMapsAqui" target="_blank" style="text-decoration: underline;">Bernardo de Irigoyen 217, Gral. Alvear</a></p>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-phone-alt"></i>
                     <p>2625 55-7253</p>
                 </div>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <!-- Redes Sociales Cards -->
+                <div class="social-cards">
+                    <a href="https://www.facebook.com/share/1GrnU7u27R/?mibextid=wwXIfr" target="_blank" class="social-card facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Seguinos en Facebook</span>
+                    </a>
+                    <a href="https://www.instagram.com/psiquiatra_saludmentala.i.sa.m?igsh=MWQ1NmdmNHZhYXQ5Mg%3D%3D&utm_source=qr" target="_blank" class="social-card instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span>Seguinos en Instagram</span>
+                    </a>
+                    <a href="https://wa.me/5492625557253" target="_blank" class="social-card whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Escribinos por WhatsApp</span>
+                    </a>
                 </div>
             </div>
             
             <div class="footer-map">
-                <!-- Mapa embebido de Google Maps centrado en Gral Alvear Mendoza (Genérico) -->
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52097.6406733221!2d-67.73357842603433!3d-34.97086888204128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9678122d2568600d%3A0xc069273c683709b4!2sGral.%20Alvear%2C%20Mendoza!5e0!3m2!1ses!2sar!4v1706551234567!5m2!1ses!2sar" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <!-- Mapa Actualizado -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7775.187287192525!2d-67.69484639552702!3d-34.98007266051833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96781715c7f6220b%3A0xe15afc6f07d6bd40!2sBernardo%20de%20Irigoyen%20217%2C%20M5620%20Gral.%20Alvear%2C%20Mendoza!5e0!3m2!1ses!2sar!4v1769718800362!5m2!1ses!2sar" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2024 A.I.Sa.M. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <!-- WhatsApp Flotante -->
+    <a href="https://wa.me/5492625557253" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <script src="script.js"></script>
 </body>
