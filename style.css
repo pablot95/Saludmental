@@ -149,6 +149,16 @@ ul {
     justify-content: space-between; 
 }
 
+#neuroCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3; /* Por encima del contenido y gradient */
+    pointer-events: none; /* Permitir clicks a través */
+}
+
 /* Animaciones Personalizadas */
 @keyframes slideInLeft {
     from {
