@@ -87,23 +87,23 @@
             <p class="section-subtitle text-center">Abordaje interdisciplinario para Niños, Adolescentes y Adultos.</p>
 
             <div class="specialties-grid">
-                <div class="specialty-card fade-in">
+                <div class="specialty-card fade-in" data-modal="psicologia">
                     <i class="fas fa-brain"></i>
                     <h3>Psicología</h3>
                 </div>
-                <div class="specialty-card fade-in">
+                <div class="specialty-card fade-in" data-modal="psiquiatria">
                     <i class="fas fa-user-md"></i>
                     <h3>Psiquiatría</h3>
                 </div>
-                <div class="specialty-card fade-in">
+                <div class="specialty-card fade-in" data-modal="to">
                     <i class="fas fa-hands-helping"></i>
                     <h3>Terapia Ocupacional</h3>
                 </div>
-                <div class="specialty-card fade-in">
+                <div class="specialty-card fade-in" data-modal="psicopedagogia">
                     <i class="fas fa-shapes"></i>
                     <h3>Psicopedagogía</h3>
                 </div>
-                <div class="specialty-card fade-in">
+                <div class="specialty-card fade-in" data-modal="nutricion">
                     <i class="fas fa-apple-alt"></i>
                     <h3>Nutrición</h3>
                 </div>
@@ -261,6 +261,20 @@
     <a href="https://wa.me/5492625557253" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <!-- Modal Info Especialidades -->
+    <div id="modal-info" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <i id="modal-icon" class="fas"></i>
+                <h3 id="modal-title">Título</h3>
+            </div>
+            <div class="modal-body">
+                <p id="modal-text">Texto descriptivo.</p>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
