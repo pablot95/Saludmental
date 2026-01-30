@@ -461,8 +461,9 @@ ul {
 
 .specialties-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
+    /* Reducimos minmax para que quepan 5 en pantallas de escritorio estandar */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px; /* Reducimos gap para ganar espacio */
     margin-bottom: 60px;
     text-align: center;
 }
