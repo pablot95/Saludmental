@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'psicologia': {
             title: 'Psicología',
             text: 'En A.I.Sa.M, la Psicología ofrece un espacio de escucha, contención y acompañamiento profesional a niños, adolescentes y adultos. A través de abordajes individuales y grupales, trabajamos sobre las emociones, pensamientos y conductas, promoviendo el bienestar emocional y el fortalecimiento de recursos personales.',
-            icon: 'fa-brain'
+            icon: 'fa-comments'
         },
         'psiquiatria': {
             title: 'Psiquiatría',
@@ -83,6 +83,21 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Nutrición',
             text: 'En A.I.Sa.M, la Nutrición forma parte del abordaje integral de la salud. Promovemos una alimentación consciente y personalizada, teniendo en cuenta hábitos, contexto y salud mental, como base para el bienestar físico y emocional.',
             icon: 'fa-apple-alt'
+        },
+        'neurologia': {
+            title: 'Neurología',
+            text: 'La Neurología se ocupa del diagnóstico y tratamiento de trastornos del sistema nervioso, brindando una atención especializada para diversas patologías neurológicas.',
+            icon: 'fa-brain'
+        },
+        'clinica': {
+            title: 'Clínica Médica',
+            text: 'Brindamos atención clínica integral, realizando diagnósticos, tratamientos y seguimientos de diversas afecciones médicas para el cuidado general de la salud.',
+            icon: 'fa-stethoscope'
+        },
+        'infectologia': {
+            title: 'Infectología',
+            text: 'La especialidad de Infectología se dedica a la prevención, diagnóstico y tratamiento de enfermedades infecciosas, cuidando la salud de nuestros pacientes.',
+            icon: 'fa-virus'
         }
     };
 
