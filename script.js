@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- Menú Hamburguesa ---
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     const links = document.querySelectorAll('.nav-links li');
@@ -10,37 +9,34 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburger.classList.toggle('toggle');
     });
 
-    // Cerrar menú al hacer click en un link
     links.forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
         });
     });
 
-    // --- Efecto Navbar Scroll ---
     const navbar = document.querySelector('.navbar');
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             navbar.style.boxShadow = "0 4px 20px rgba(0,0,0,0.1)";
-            navbar.style.padding = "0"; // Compactar ligeramente si fuera necesario
+            navbar.style.padding = "0";
         } else {
             navbar.style.boxShadow = "0 2px 15px rgba(0,0,0,0.05)";
         }
     });
 
-    // --- Animación Fade-in al hacer Scroll (Intersection Observer) ---
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.15 // El elemento debe estar 15% visible para activarse
+        threshold: 0.15
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Dejar de observar una vez animado
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
@@ -50,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // --- Modal Logic ---
     const modal = document.getElementById('modal-info');
     const modalTitle = document.getElementById('modal-title');
     const modalText = document.getElementById('modal-text');
@@ -111,7 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalIcon.className = `fas ${data.icon}`;
                 
                 modal.style.display = 'flex';
-                // Timeout para permitir que el display:flex se aplique antes de la opacidad (transición)
                 setTimeout(() => {
                     modal.classList.add('show');
                 }, 10);
@@ -123,21 +117,19 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.classList.remove('show');
         setTimeout(() => {
             modal.style.display = 'none';
-        }, 300); // Esperar a que termine la transición
+        }, 300);
     }
 
     if (closeBtn) {
         closeBtn.addEventListener('click', closeModal);
     }
 
-    // Cerrar al hacer click fuera del contenido
     window.addEventListener('click', (e) => {
         if (e.target === modal) {
             closeModal();
         }
     });
 
-    // --- Smooth Scroll para enlaces internos (Safari/antiguos soporte) ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -148,7 +140,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetElement = document.querySelector(targetId);
             
             if (targetElement) {
-                // Ajustar offset por el navbar fijo
                 const headerOffset = 80;
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
@@ -161,20 +152,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Neuro Canvas Animation (Hero Background) ---
     const canvas = document.getElementById('neuroCanvas');
     if (canvas) {
         const ctx = canvas.getContext('2d');
         let width, height;
         let particles = [];
 
-        // Colores basados en CSS - Más visibles
-        const particleColor = 'rgba(255, 255, 255, 0.9)'; // Blanco brillante casi opaco
-        const lineColor = '255, 255, 255'; // Blanco para conexiones
+        const particleColor = 'rgba(255, 255, 255, 0.9)';
+        const lineColor = '255, 255, 255';
 
-        // Configuración
-        let particleCount = 70; // Un poco más de partículas
-        const connectionDistance = 160; // Conexiones más largas
+        let particleCount = 70;
+        const connectionDistance = 160;
         
         function resize() {
             const parent = canvas.parentElement;
@@ -182,7 +170,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 width = canvas.width = parent.offsetWidth;
                 height = canvas.height = parent.offsetHeight;
                 
-                // Ajustar cantidad de partículas según el ancho de pantalla
                 if (width < 768) {
                     particleCount = 45;
                 } else {
@@ -195,16 +182,15 @@ document.addEventListener('DOMContentLoaded', () => {
             constructor() {
                 this.x = Math.random() * width;
                 this.y = Math.random() * height;
-                this.vx = (Math.random() - 0.5) * 2.0; // Un poco más rápido
+                this.vx = (Math.random() - 0.5) * 2.0;
                 this.vy = (Math.random() - 0.5) * 2.0;
-                this.size = Math.random() * 3 + 2; // Más grandes (2 a 5px)
+                this.size = Math.random() * 3 + 2;
             }
 
             update() {
                 this.x += this.vx;
                 this.y += this.vy;
 
-                // Rebotar en los bordes
                 if (this.x < 0 || this.x > width) this.vx *= -1;
                 if (this.y < 0 || this.y > height) this.vy *= -1;
             }
@@ -231,7 +217,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 particles[i].update();
                 particles[i].draw();
                 
-                // Dibujar conexiones
                 for (let j = i; j < particles.length; j++) {
                     let dx = particles[i].x - particles[j].x;
                     let dy = particles[i].y - particles[j].y;
@@ -256,7 +241,6 @@ document.addEventListener('DOMContentLoaded', () => {
              initParticles();
         });
 
-        // Inicializar
         resize();
         initParticles();
         animate();
